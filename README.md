@@ -7,6 +7,8 @@ I also have a *git hook* *pre-commit* configuration.
 ```sh
 $ mise install
 $ git config core.hooksPath git-hooks
+$ gitleaks --version
+gitleaks version 8.25.1
 ```
 
 ```sh
