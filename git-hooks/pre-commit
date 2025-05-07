@@ -1,0 +1,22 @@
+#!/bin/bash
+
+GITLEAKS_PATH=$(which gitleaks)
+
+if [ -z "$GITLEAKS_PATH" ]; then
+    echo "Error: gitleaks is not installed or not in PATH, execute `mise install`"
+    exit 1
+fi
+
+echo "Running gitleaks to check for secrets leaks..."
+
+$GITLEAKS_PATH git --no-banner --staged -v
+
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+    echo "Gitleaks detected potential issues. Commit aborted."
+    exit $EXIT_CODE
+fi
+
+echo "No leaks detected by gitleaks."
+exit 0

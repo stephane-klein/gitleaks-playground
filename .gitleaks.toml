@@ -1,0 +1,24 @@
+[extend]
+useDefault = true
+
+[[rules]]
+description = "password"
+id = "password"
+regex = '''(?i)(?:key|api|token|secret|client|passwd|password|auth|access)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:{1,3}=|\|\|:|<=|=>|:|\?=)(?:'|\"|\s|=|\x60){0,5}([0-9a-z\-_.=]{10,150})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
+secretGroup = 1
+entropy = 2
+keywords = [
+    "key","api","token","secret","client","passwd","password","auth","access",
+]
+
+[[allowlists]]
+description = "Ignore README"
+paths = [
+    "README.md"
+]
+
+[[allowlists]]
+description = "Ignore .secret"
+paths = [
+    ".secret"
+]
