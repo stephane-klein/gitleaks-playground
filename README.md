@@ -4,6 +4,8 @@ I implemented this playground to test how to use and configure *gitleaks*.
 
 I also have a *git hook* *pre-commit* configuration.
 
+For more information, you can also read this note in French: https://notes.sklein.xyz/2025-05-07_2353/
+
 ```sh
 $ mise install
 $ git config core.hooksPath git-hooks
