@@ -9,7 +9,7 @@ fi
 
 echo "Running gitleaks to check for secrets leaks..."
 
-$GITLEAKS_PATH git --no-banner --staged -v
+$GITLEAKS_PATH git --no-banner --pre-commit --staged -v
 
 EXIT_CODE=$?
 
